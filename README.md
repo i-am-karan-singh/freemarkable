@@ -1,6 +1,6 @@
 # Freemarkable
 
-A cloud-free, incremental solution to upload documents/directories onto remarkable.
+A cloud-free, incremental solution to upload documents/directories onto [reMarkable](https://remarkable.com/).
 
 Features:
 

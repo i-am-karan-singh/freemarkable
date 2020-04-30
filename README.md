@@ -21,7 +21,7 @@ Could-be-betters:
 + [ ] No remarkable-to-media tranfer mechanism yet; possibly easy with directory map.
 + [ ] Investigate [this](https://stackoverflow.com/questions/24058544/speed-up-rsync-with-simultaneous-concurrent-file-transfers) or [related](https://github.com/jbd/msrsync).
 + [ ] Save space by limiting presistence to thumbnails/metadata.
-+ [ ] Follow-up: Memory-efficient online tranfer -- `rsync` could be a bottleneck.
++ [ ] Follow-up: Memory-efficient online transfer -- `rsync` could be a bottleneck.
 + [ ] Option to switch default tool to fineliner.
 
 See [this](https://remarkablewiki.com/tech/filesystem) and [that](https://github.com/adaerr/reMarkableScripts/blob/master/pdf2remarkable.sh).

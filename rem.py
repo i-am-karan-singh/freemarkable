@@ -14,10 +14,9 @@ sec = int(time.time())
 
 @dataclass
 class UUIDMap:
-    base: str
     mapfile: str
     def loadMap(self):
-        self.uuidmap = {self.base: ''}
+        self.uuidmap = {'/': ''}
         if os.path.exists(self.mapfile):
             with open(self.mapfile, 'r') as fp:
                 self.uuidmap = json.load(fp)
@@ -29,7 +28,7 @@ class UUIDMap:
         self.uuidmap[s] = self.uuidmap[s] if s in self.uuidmap else str(uuid4())
         return self.uuidmap[s]
 
-uuidmap = UUIDMap(base, mapfile)
+uuidmap = UUIDMap(mapfile)
 uuidmap.loadMap()
 
 def attemptCopy(s, d):
@@ -48,7 +47,7 @@ def attemptThumbnail(f, pdf):
         os.system(cmd_template.format(pdf, f+'/0'))
     
 def createNode(r, f, ext=''):
-    fid, pid = uuidmap.getMap(r+'/'+f), uuidmap.getMap(r)
+    fid, pid = uuidmap.getMap((r+'/'+f)[len(base):]), uuidmap.getMap((r)[len(base):])
     if ext in exts:
         attemptCopy(r+'/'+f+ext, dest+'/'+fid+ext)
         attemptWrite(dest+'/'+fid+'.metadata', metadata_template[ext].format(sec, pid, f))
